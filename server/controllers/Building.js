@@ -67,5 +67,56 @@ exports.getRealEstate = async (req, res) => {
   }
 };
 
-//@desc Update realstate
-//@route PUT /api/v1/
+//@desc Update realestate
+//@route PUT /api/v1/realestate/:id
+//@access private
+exports.updateRealEstate = async (req, res, next) => {
+  try {
+    const building = await Building.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!building) {
+      return res.status(404).json({
+        success: false,
+        msg: "Could not find a Building with this ID",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: building,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      msg: "Server error",
+    });
+  }
+};
+
+//@desc Delete a realestate
+//@route DELETE /api/v1/realestate/:id
+//@access private
+exports.deleteRealEstate = async (req, res, next) => {
+  try {
+    const building = await Building.findByIdAndDelete(req.params.id);
+
+    if (!building) {
+      return res.status(404).json({
+        success: false,
+        msg: "Could not find a building with the given ID",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      data: building,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      msg: "Server error",
+    });
+  }
+};
