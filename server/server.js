@@ -17,8 +17,8 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// // Route files
-// const product = require("./routes/Product");
+// Route files
+const realEstate = require("./routes/Building");
 
-// // Mount routers
-// app.use("/api/v1/product", product);
+// Mount routers
+app.use("/api/v1/realestate", realEstate);
