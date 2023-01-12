@@ -41,6 +41,9 @@ const Building = new Schema({
   sampleImage: {
     type: String,
   },
+  favourit: {
+    type: Boolean,
+  },
 });
 const building = mongoose.model("Building", Building);
 module.exports = building;
