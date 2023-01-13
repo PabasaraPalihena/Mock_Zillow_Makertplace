@@ -1,9 +1,10 @@
 import React from "react";
 import "./Home.css";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
 export default function Sell() {
+  const history = useHistory();
   return (
     <div>
       <div className="sell_desc">
@@ -28,10 +29,21 @@ export default function Sell() {
         <Button
           variant="contained"
           style={{ width: "200px", height: "50px" }}
-          // onClick={h}
+          onClick={() => history.push("/postad")}
         >
           Post your Home
         </Button>
+        <br />
+        <img
+          src={require("../assets/citro.png")}
+          alt="city"
+          style={{
+            width: "66%",
+            position: "center",
+            left: "270px",
+            filter: "contrast(105%) ",
+          }}
+        />
       </div>
     </div>
   );

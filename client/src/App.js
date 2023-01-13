@@ -10,6 +10,9 @@ import Header from "./components/view/Header";
 import Footer from "./components/view/Footer";
 import Home from "./components/RealEstate/Home";
 import Sell from "./components/RealEstate/Sell";
+import PostAd from "./components/RealEstate/PostAd";
+import UpdateAd from "./components/RealEstate/UpdateAd";
+import RetrieveAds from "./components/RealEstate/RetrieveAds";
 
 function App() {
   return (
@@ -22,6 +25,15 @@ function App() {
           </Route>
           <Route exact path="/sell">
             <Sell />
+          </Route>
+          <Route exact path="/postad">
+            <PostAd />
+          </Route>
+          <Route exact path="/updatead">
+            <UpdateAd />
+          </Route>
+          <Route exact path="/getads">
+            <RetrieveAds />
           </Route>
           <Redirect to="/realestate/404" />
         </Switch>

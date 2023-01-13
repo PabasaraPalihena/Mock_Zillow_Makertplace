@@ -1,21 +1,21 @@
-.Product_details {
-
+.Estate_details {
     min-width: 70%;
+    
   }
-  .Product_details h1 {
+  .Estate_details h1 {
     font-size: 25px;
     margin-left: 180px;
   }
-  .Product_txt{
+  .Estate_txt{
     margin: 1;
     width: 45ch;
 
   }
-  .Product_details__input {
+  .Estate_details__input {
     display: flex;
     margin: 15px;
   }
-  .Product_details__input p {
+  .Estate_details__input p {
     margin: 10px;
     margin-left: 70px;
     font-size: 17px;
@@ -28,7 +28,7 @@
     justify-content: space-around;
     margin: 13px;
     padding: 0px 35px;
-    
+   
   }
   .img_delete{
     height: 100px;
@@ -40,6 +40,6 @@
     justify-content: space-around;
     padding: 0px 35px;
     margin: 15px;
-    background-color: white;
+    background-color: #f5f5f5;
   }
   

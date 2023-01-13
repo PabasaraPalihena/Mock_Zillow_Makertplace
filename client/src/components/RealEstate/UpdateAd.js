@@ -11,45 +11,55 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
-export default function PostAd() {
-  const [streetAddress, setstreetAddress] = useState("");
-  const [city, setcity] = useState("");
-  const [zip, setzip] = useState("");
-  const [bCategory, setbCategory] = useState("");
-  const [type, settype] = useState("");
-  const [price, setprice] = useState("");
-  const [features, setfeatures] = useState("");
-  const [otherfacts, setotherfacts] = useState("");
-  const [sampleImage, setsampleImage] = useState("");
+export default function UpdateAd() {
+  const location = useLocation();
+  const [id, setid] = useState(location.ad._id);
+  const [streetAddress, setstreetAddress] = useState(location.ad.streetAddress);
+  const [city, setcity] = useState(location.ad.city);
+  const [zip, setzip] = useState(location.ad.zip);
+  const [bCategory, setbCategory] = useState(location.ad.bCategory);
+  const [type, settype] = useState(location.ad.type);
+  const [price, setprice] = useState(location.ad.price);
+  const [features, setfeatures] = useState(location.ad.features);
+  const [otherfacts, setotherfacts] = useState(location.ad.otherfacts);
+  const [sampleImage, setsampleImage] = useState(location.ad.sampleImage);
 
   const API = process.env.REACT_APP_API;
   const history = useHistory();
 
-  //using axios send Ads details to api
-  const sendAdsToAPI = (e) => {
-    Axios.post(`${API}api/v1/realestate`, {
+  //using axios update ad details
+  const sendupdatedAdToAPI = () => {
+    const data = {
       streetAddress,
       city,
       zip,
       bCategory,
-      type,
       price,
       features,
       otherfacts,
       sampleImage,
-    }).then((res) => {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Your work has been saved",
-        showConfirmButton: false,
-        timer: 1500,
+    };
+
+    //update product details
+    Axios.put(`${API}api/v1/realestate/${location.ad._id}`, data);
+    console
+      .log(location.ad._id)
+      .then((res) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      //   history.push("/sell");
-    });
   };
+
   return (
     // data form
     <div className="res_component">
@@ -121,6 +131,7 @@ export default function PostAd() {
                       setbCategory(event.target.value);
                     }}
                     style={{ width: "360px" }}
+                    disabled
                   >
                     <MenuItem value={1}>Houses</MenuItem>
                     <MenuItem value={2}>villas</MenuItem>
@@ -145,8 +156,8 @@ export default function PostAd() {
                     }}
                     style={{ width: "360px" }}
                   >
-                    <MenuItem value={"Sale"}>Sales</MenuItem>
-                    <MenuItem value={"Rent"}>Rent</MenuItem>
+                    <MenuItem value={1}>Sales</MenuItem>
+                    <MenuItem value={2}>Rent</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -215,9 +226,9 @@ export default function PostAd() {
                       height: "40px",
                       margin: "20px 0px 0px 100px",
                     }}
-                    onClick={sendAdsToAPI}
+                    onClick={sendupdatedAdToAPI}
                   >
-                    Post
+                    Update
                   </Button>
                   <br />
                 </FormControl>
