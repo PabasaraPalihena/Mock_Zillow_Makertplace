@@ -1,0 +1,13 @@
+.center {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 100%;
+  }
+  .find{
+    display: block;
+    margin-left: 200px;
+    margin-top: 120px;
+    margin-right: auto;
+    width: 100%;
+  }
