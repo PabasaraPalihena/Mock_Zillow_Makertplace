@@ -6,10 +6,11 @@
   }
   .find{
     display: block;
-    margin-left: 200px;
-    margin-top: 120px;
+    margin-left: 50px;
+    margin-top: 160px;
     margin-right: auto;
-    width: 100%;
+    font-family:'Oxygen';
+    color: rgb(65, 65, 65);
   }
   .sell_desc {
     display: block;
@@ -30,8 +31,8 @@
     color: rgb(60, 60, 60);
   }
   .sell_desc p{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 250;
     font-style: normal;
-    color: rgb(60, 60, 60);
+    color: rgb(74, 74, 74);
   }

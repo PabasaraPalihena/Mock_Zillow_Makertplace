@@ -19,7 +19,7 @@ export default function MediaCard({ ad, btn1, btn2 }) {
     console.log(ad._id);
   };
 
-  //delete products
+  //delete ad
   const deleteAd = (id) => {
     Swal.fire({
       title: "Are you sure?",

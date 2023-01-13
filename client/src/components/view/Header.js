@@ -30,7 +30,7 @@ export default function Header({ title }) {
               <Button
                 variant="outlined"
                 className="header__button"
-                onClick={() => history.push("/sell")}
+                // onClick={() => history.push("/sell")}
                 style={{ width: "100px" }}
               >
                 Sell

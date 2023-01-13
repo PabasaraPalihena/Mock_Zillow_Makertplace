@@ -2,14 +2,17 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import "./Home.css";
+import Button from "@mui/material/Button";
+import { useHistory } from "react-router-dom";
 
 export default function Home() {
+  const history = useHistory();
   return (
     <div>
       <Box sx={{ display: "flex" }}>
         <Box
           sx={{
-            width: "57%",
+            width: "60%",
           }}
         >
           <Typography paragraph>
@@ -23,20 +26,32 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            // width: "33%",
-            width: "47%",
+            width: "30%",
             height: 500,
             backgroundColor: "background",
-            // style: {
-            //   backgroundColor:
-            //     "linear-gradient(to right bottom, #430089, #82ffa1)",
-            // },
           }}
         >
-          <div className="find">
-            <h1>Find it. Tour it. Own it</h1>
-            <h4>Search bar</h4>
+          <div>
+            <h1 className="find">
+              Find the Perfect home for sale or rent with our premier real state
+              website
+            </h1>
+
             <br />
+            <Button
+              variant="contained"
+              style={{
+                marginLeft: "50px",
+                borderRadius: "20px",
+                width: "200px",
+                height: "45px",
+                backgroundColor: "#ffa000",
+              }}
+              className="header__button"
+              onClick={() => history.push("/getads")}
+            >
+              Find a Home
+            </Button>
           </div>
         </Box>
       </Box>

@@ -38,7 +38,7 @@ function App() {
           <Redirect to="/realestate/404" />
         </Switch>
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
