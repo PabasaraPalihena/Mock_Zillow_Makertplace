@@ -11,3 +11,27 @@
     margin-right: auto;
     width: 100%;
   }
+  .sell_desc {
+    display: block;
+    margin-left: 100px;
+    margin-right: auto;
+    width: 100%;
+    color: rgb(60, 60, 60);
+    padding: 5px;
+  }
+  .sell_desc h1{
+    font-size: 38px;
+    font-weight: 900;
+    font-style:bold;
+  }
+  .sell_desc h3{
+    font-size: 23px;
+    font-weight: 450;
+    color: rgb(60, 60, 60);
+  }
+  .sell_desc p{
+    font-size: 20px;
+    font-weight: 250;
+    font-style: normal;
+    color: rgb(60, 60, 60);
+  }
