@@ -69,7 +69,7 @@ export default function RetrieveAds() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search..."
               inputProps={{ "aria-label": "search" }}
               onChange={(e) => setSearchedValue(e.target.value)}
             />
@@ -81,7 +81,7 @@ export default function RetrieveAds() {
               (row) =>
                 // note that I've incorporated the searchedVal length check here
                 !searchedValue.length ||
-                row.type
+                row.city
                   .toString()
                   .toLowerCase()
                   .includes(searchedValue.toString().toLowerCase())

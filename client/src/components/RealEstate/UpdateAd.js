@@ -36,6 +36,7 @@ export default function UpdateAd() {
       city,
       zip,
       bCategory,
+      type,
       price,
       features,
       otherfacts,
@@ -43,9 +44,8 @@ export default function UpdateAd() {
     };
 
     //update product details
-    Axios.put(`${API}api/v1/realestate/${location.ad._id}`, data);
-    console
-      .log(location.ad._id)
+    Axios.put(`${API}api/v1/realestate/${location.ad._id}`, data)
+
       .then((res) => {
         Swal.fire({
           position: "top-end",
@@ -156,8 +156,8 @@ export default function UpdateAd() {
                     }}
                     style={{ width: "360px" }}
                   >
-                    <MenuItem value={1}>Sales</MenuItem>
-                    <MenuItem value={2}>Rent</MenuItem>
+                    <MenuItem value={"Sale"}>Sales</MenuItem>
+                    <MenuItem value={"Rent"}>Rent</MenuItem>
                   </Select>
                 </FormControl>
               </div>

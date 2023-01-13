@@ -6,9 +6,6 @@ import { useHistory } from "react-router-dom";
 export default function Header({ title }) {
   const history = useHistory();
 
-  function handleClick() {
-    history.push("/");
-  }
   return (
     <>
       <header>
@@ -22,7 +19,9 @@ export default function Header({ title }) {
               <Button
                 variant="outlined"
                 className="header__button"
-                onClick={handleClick}
+                onClick={() => {
+                  window.location.href = "/";
+                }}
                 style={{ width: "100px" }}
               >
                 Home
@@ -30,27 +29,12 @@ export default function Header({ title }) {
               <Button
                 variant="outlined"
                 className="header__button"
-                // onClick={() => history.push("/sell")}
+                onClick={() => {
+                  window.location.href = "/sell";
+                }}
                 style={{ width: "100px" }}
               >
                 Sell
-              </Button>
-              <Button
-                variant="outlined"
-                className="header__button"
-                // onClick={() => history.push("/addproduct")}
-                style={{ width: "100px" }}
-              >
-                Click
-              </Button>
-
-              <Button
-                variant="outlined"
-                className="header__button"
-                // onClick={() => history.push("/allproducts")}
-                style={{ width: "100px" }}
-              >
-                Click
               </Button>
             </div>
           </div>

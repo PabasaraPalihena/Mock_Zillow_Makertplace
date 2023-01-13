@@ -18,6 +18,9 @@ export default function MediaCard({ ad, btn1, btn2 }) {
     history.push({ pathname: "/updatead", ad });
     console.log(ad._id);
   };
+  const refresh = () => {
+    window.location.href = "/getads";
+  };
 
   //delete ad
   const deleteAd = (id) => {
@@ -39,7 +42,7 @@ export default function MediaCard({ ad, btn1, btn2 }) {
             showConfirmButton: false,
             timer: 1500,
           });
-          // refresh();
+          refresh();
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
         });
       }

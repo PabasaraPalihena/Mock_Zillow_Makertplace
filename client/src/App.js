@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 
 import Header from "./components/view/Header";
-import Footer from "./components/view/Footer";
-import Home from "./components/RealEstate/Home";
-import Sell from "./components/RealEstate/Sell";
+import RetrieveAds from "./components/RealEstate/RetrieveAds";
 import PostAd from "./components/RealEstate/PostAd";
 import UpdateAd from "./components/RealEstate/UpdateAd";
-import RetrieveAds from "./components/RealEstate/RetrieveAds";
+import Home from "./components/RealEstate/Home";
+import Sell from "./components/RealEstate/Sell";
+import Footer from "./components/view/Footer";
 
 function App() {
   return (
@@ -20,21 +20,23 @@ function App() {
       <Header title={"Zillow"} />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/sell">
-            <Sell />
-          </Route>
+          {/* <Route exact path="/getads">
+            <RetrieveAds />
+          </Route> */}
+          <Route exact path="/getads" component={RetrieveAds} />
           <Route exact path="/postad">
             <PostAd />
           </Route>
           <Route exact path="/updatead">
             <UpdateAd />
           </Route>
-          <Route exact path="/getads">
-            <RetrieveAds />
+          <Route exact path="/">
+            <Home />
           </Route>
+          <Route exact path="/sell">
+            <Sell />
+          </Route>
+
           <Redirect to="/realestate/404" />
         </Switch>
       </Router>
